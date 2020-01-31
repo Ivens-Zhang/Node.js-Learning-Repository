@@ -38,6 +38,7 @@ server.on('request', (request, response) => {
   }
 })
 
+
 // 4. 绑定端口号, 启动服务器
 server.listen(3000, function (a) {  
   console.log('服务器启动成功!')
