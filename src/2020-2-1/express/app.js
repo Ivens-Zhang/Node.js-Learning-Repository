@@ -14,12 +14,16 @@ app.get('/about', function (req, res) {
   res.send('这是 about 页面!')
 })
 
+app.get('/user', function (req, res) {  
+  res.send('这是 user 页面!')
+})
+
 /*
   4. 指定公开目录
   指定开放的目录，即可访问此目录下的所有文件。
   
   公开目录的三种方式：
-  
+
   1.可以访问此目录下的文件资源 , 即 http://localhost:3000/static/home.html
   app.use('/static/',express.static('./static')); ---> 用的多
 
