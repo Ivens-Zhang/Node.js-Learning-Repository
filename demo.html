@@ -1,0 +1,42 @@
+<html lang="zh-cn">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>元素拖动</title>
+  <style>
+    #d1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: darkslategrey;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="d1" draggable="true"></div>
+  <p id="p1"></p>
+
+  <script type="text/javascript">
+    var div1 = document.getElementById('d1')
+    move = false
+    var relaX,relaY
+    div1.onmousedown = function (ev) {
+      var relaX = ev.clientX - this.offsetLeft;
+      var relaY = ev.clientY - this.offsetTop;
+      move = true
+    }
+    div1.onmousemove = function (e) {
+      if (move) {
+        div1.style.left = e.clientX - relaX + 'px'
+        div1.style.top = e.clientY - relaY + 'px'
+        console.log(e.clientX);
+      }
+    }
+    div1.onmouseup = function () {
+      move = false
+    }
+  </script>
+</body>
+
+</html>
